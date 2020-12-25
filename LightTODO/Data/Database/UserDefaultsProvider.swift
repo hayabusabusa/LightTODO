@@ -19,6 +19,10 @@ protocol UserDefaultsProviderProtocol: AnyObject {
     ///   - type: The object type to store in the database.
     ///   - key: A key which can access stored object in the database.
     func decodable<T: Decodable>(_ type: T.Type, for key: UserDefaultsProvider.Key) -> T?
+    
+    /// Removes the value of the specified key.
+    /// - Parameter key: The key whose value you want to remove.
+    func removeObject(for key: UserDefaultsProvider.Key)
 }
 
 final class UserDefaultsProvider: UserDefaultsProviderProtocol {
@@ -45,5 +49,9 @@ final class UserDefaultsProvider: UserDefaultsProviderProtocol {
             return nil
         }
         return try? JSONDecoder().decode(type, from: stored)
+    }
+    
+    func removeObject(for key: Key) {
+        userDefaults.removeObject(forKey: key.rawValue)
     }
 }
