@@ -19,6 +19,7 @@
 		71062E872595ABC700E655EE /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E862595ABC700E655EE /* Todos.swift */; };
 		71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E8F2595AF4600E655EE /* LightTODOTests.swift */; };
 		71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E9B2595AF7B00E655EE /* TodosTests.swift */; };
+		71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		71062E8F2595AF4600E655EE /* LightTODOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTODOTests.swift; sourceTree = "<group>"; };
 		71062E912595AF4600E655EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71062E9B2595AF7B00E655EE /* TodosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTests.swift; sourceTree = "<group>"; };
+		71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				71062E992595AF5000E655EE /* Data */,
+				71062EA125961B0D00E655EE /* Model */,
 				71062E8F2595AF4600E655EE /* LightTODOTests.swift */,
 				71062E912595AF4600E655EE /* Info.plist */,
 			);
@@ -165,6 +168,7 @@
 		71062E992595AF5000E655EE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				71062EA225961E4100E655EE /* Database */,
 				71062E9A2595AF5800E655EE /* Entity */,
 			);
 			path = Data;
@@ -176,6 +180,21 @@
 				71062E9B2595AF7B00E655EE /* TodosTests.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		71062EA125961B0D00E655EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71062EA225961E4100E655EE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +313,7 @@
 			files = (
 				71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */,
 				71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */,
+				71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
