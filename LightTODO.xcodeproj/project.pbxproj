@@ -17,7 +17,19 @@
 		71062E7E2595AA5400E655EE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E7D2595AA5400E655EE /* Todo.swift */; };
 		71062E832595AAB200E655EE /* TodosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E822595AAB200E655EE /* TodosModel.swift */; };
 		71062E872595ABC700E655EE /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E862595ABC700E655EE /* Todos.swift */; };
+		71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E8F2595AF4600E655EE /* LightTODOTests.swift */; };
+		71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E9B2595AF7B00E655EE /* TodosTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71062E922595AF4600E655EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71062E482595A35B00E655EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71062E4F2595A35B00E655EE;
+			remoteInfo = LightTODO;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		71062E502595A35B00E655EE /* LightTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +44,21 @@
 		71062E7D2595AA5400E655EE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		71062E822595AAB200E655EE /* TodosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModel.swift; sourceTree = "<group>"; };
 		71062E862595ABC700E655EE /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
+		71062E8D2595AF4600E655EE /* LightTODOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightTODOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71062E8F2595AF4600E655EE /* LightTODOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTODOTests.swift; sourceTree = "<group>"; };
+		71062E912595AF4600E655EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71062E9B2595AF7B00E655EE /* TodosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		71062E4D2595A35B00E655EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71062E8A2595AF4600E655EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				71062E522595A35B00E655EE /* LightTODO */,
+				71062E8E2595AF4600E655EE /* LightTODOTests */,
 				71062E512595A35B00E655EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				71062E502595A35B00E655EE /* LightTODO.app */,
+				71062E8D2595AF4600E655EE /* LightTODOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +152,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		71062E8E2595AF4600E655EE /* LightTODOTests */ = {
+			isa = PBXGroup;
+			children = (
+				71062E992595AF5000E655EE /* Data */,
+				71062E8F2595AF4600E655EE /* LightTODOTests.swift */,
+				71062E912595AF4600E655EE /* Info.plist */,
+			);
+			path = LightTODOTests;
+			sourceTree = "<group>";
+		};
+		71062E992595AF5000E655EE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				71062E9A2595AF5800E655EE /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		71062E9A2595AF5800E655EE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71062E9B2595AF7B00E655EE /* TodosTests.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +198,24 @@
 			productReference = 71062E502595A35B00E655EE /* LightTODO.app */;
 			productType = "com.apple.product-type.application";
 		};
+		71062E8C2595AF4600E655EE /* LightTODOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71062E942595AF4600E655EE /* Build configuration list for PBXNativeTarget "LightTODOTests" */;
+			buildPhases = (
+				71062E892595AF4600E655EE /* Sources */,
+				71062E8A2595AF4600E655EE /* Frameworks */,
+				71062E8B2595AF4600E655EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71062E932595AF4600E655EE /* PBXTargetDependency */,
+			);
+			name = LightTODOTests;
+			productName = LightTODOTests;
+			productReference = 71062E8D2595AF4600E655EE /* LightTODOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +227,10 @@
 				TargetAttributes = {
 					71062E4F2595A35B00E655EE = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					71062E8C2595AF4600E655EE = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 71062E4F2595A35B00E655EE;
 					};
 				};
 			};
@@ -175,6 +248,7 @@
 			projectRoot = "";
 			targets = (
 				71062E4F2595A35B00E655EE /* LightTODO */,
+				71062E8C2595AF4600E655EE /* LightTODOTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +261,13 @@
 				71062E722595A46F00E655EE /* TodosViewController.storyboard in Resources */,
 				71062E602595A35D00E655EE /* LaunchScreen.storyboard in Resources */,
 				71062E5D2595A35D00E655EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71062E8B2595AF4600E655EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +288,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71062E892595AF4600E655EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */,
+				71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71062E932595AF4600E655EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71062E4F2595A35B00E655EE /* LightTODO */;
+			targetProxy = 71062E922595AF4600E655EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		71062E5E2595A35D00E655EE /* LaunchScreen.storyboard */ = {
@@ -373,6 +471,44 @@
 			};
 			name = Release;
 		};
+		71062E952595AF4600E655EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightTODOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.LightTODOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightTODO.app/LightTODO";
+			};
+			name = Debug;
+		};
+		71062E962595AF4600E655EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightTODOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.LightTODOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightTODO.app/LightTODO";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -390,6 +526,15 @@
 			buildConfigurations = (
 				71062E652595A35D00E655EE /* Debug */,
 				71062E662595A35D00E655EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71062E942595AF4600E655EE /* Build configuration list for PBXNativeTarget "LightTODOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71062E952595AF4600E655EE /* Debug */,
+				71062E962595AF4600E655EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
