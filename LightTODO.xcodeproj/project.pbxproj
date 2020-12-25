@@ -20,6 +20,8 @@
 		71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E8F2595AF4600E655EE /* LightTODOTests.swift */; };
 		71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062E9B2595AF7B00E655EE /* TodosTests.swift */; };
 		71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */; };
+		71062EAA25962AA300E655EE /* TodosModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EA925962AA300E655EE /* TodosModelTests.swift */; };
+		71062EAF259637EA00E655EE /* TodosModelReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EAE259637EA00E655EE /* TodosModelReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		71062E912595AF4600E655EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71062E9B2595AF7B00E655EE /* TodosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTests.swift; sourceTree = "<group>"; };
 		71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsProvider.swift; sourceTree = "<group>"; };
+		71062EA925962AA300E655EE /* TodosModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModelTests.swift; sourceTree = "<group>"; };
+		71062EAE259637EA00E655EE /* TodosModelReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModelReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 		71062EA125961B0D00E655EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				71062EAD259637DA00E655EE /* Todos */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +200,15 @@
 				71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		71062EAD259637DA00E655EE /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				71062EA925962AA300E655EE /* TodosModelTests.swift */,
+				71062EAE259637EA00E655EE /* TodosModelReceiver.swift */,
+			);
+			path = Todos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */,
+				71062EAA25962AA300E655EE /* TodosModelTests.swift in Sources */,
 				71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */,
+				71062EAF259637EA00E655EE /* TodosModelReceiver.swift in Sources */,
 				71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
