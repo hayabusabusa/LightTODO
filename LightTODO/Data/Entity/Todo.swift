@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Todo: Encodable {
+struct Todo: Codable {
     let title: String
     let detail: String?
     let isCompleted: Bool
