@@ -22,6 +22,8 @@
 		71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */; };
 		71062EAA25962AA300E655EE /* TodosModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EA925962AA300E655EE /* TodosModelTests.swift */; };
 		71062EAF259637EA00E655EE /* TodosModelReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71062EAE259637EA00E655EE /* TodosModelReceiver.swift */; };
+		715E533025994A3F005A127A /* TodosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E532E25994A3F005A127A /* TodosCell.swift */; };
+		715E533125994A3F005A127A /* TodosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715E532F25994A3F005A127A /* TodosCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		71062EA325961E7900E655EE /* MockUserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsProvider.swift; sourceTree = "<group>"; };
 		71062EA925962AA300E655EE /* TodosModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModelTests.swift; sourceTree = "<group>"; };
 		71062EAE259637EA00E655EE /* TodosModelReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModelReceiver.swift; sourceTree = "<group>"; };
+		715E532E25994A3F005A127A /* TodosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosCell.swift; sourceTree = "<group>"; };
+		715E532F25994A3F005A127A /* TodosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodosCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			children = (
 				71062E6D2595A45F00E655EE /* TodosViewController.swift */,
 				71062E712595A46F00E655EE /* TodosViewController.storyboard */,
+				715E532D25994A2D005A127A /* Cell */,
 			);
 			path = Todos;
 			sourceTree = "<group>";
@@ -211,6 +216,15 @@
 			path = Todos;
 			sourceTree = "<group>";
 		};
+		715E532D25994A2D005A127A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				715E532E25994A3F005A127A /* TodosCell.swift */,
+				715E532F25994A3F005A127A /* TodosCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +308,7 @@
 				71062E722595A46F00E655EE /* TodosViewController.storyboard in Resources */,
 				71062E602595A35D00E655EE /* LaunchScreen.storyboard in Resources */,
 				71062E5D2595A35D00E655EE /* Assets.xcassets in Resources */,
+				715E533125994A3F005A127A /* TodosCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +329,7 @@
 				71062E542595A35B00E655EE /* AppDelegate.swift in Sources */,
 				71062E832595AAB200E655EE /* TodosModel.swift in Sources */,
 				71062E6E2595A45F00E655EE /* TodosViewController.swift in Sources */,
+				715E533025994A3F005A127A /* TodosCell.swift in Sources */,
 				71062E562595A35B00E655EE /* SceneDelegate.swift in Sources */,
 				71062E782595A59A00E655EE /* UserDefaultsProvider.swift in Sources */,
 				71062E7E2595AA5400E655EE /* Todo.swift in Sources */,
