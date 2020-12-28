@@ -22,12 +22,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-eZ-0dd">
                                         <rect key="frame" x="0.0" y="12" width="398" height="99.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="TITLE" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-fq-vfA">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-fq-vfA" customClass="PlaceholderTextView" customModule="LightTODO" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="49.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="タイトルを入力"/>
+                                                </userDefinedRuntimeAttributes>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kro-ad-3nW">
                                                 <rect key="frame" x="0.0" y="49.5" width="398" height="50"/>
@@ -50,12 +53,15 @@
                                                             <constraint firstItem="GMu-NG-sLM" firstAttribute="leading" secondItem="Njf-8R-x7b" secondAttribute="leading" constant="8" id="z98-3Q-yqI"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="detail" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ESq-D6-CQL">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ESq-D6-CQL" customClass="PlaceholderTextView" customModule="LightTODO" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="0.0" width="358" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="詳細を入力"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
                                             </stackView>
