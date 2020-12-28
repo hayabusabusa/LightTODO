@@ -110,6 +110,11 @@ extension TodosViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        // TODO: push Todo Screen
+        
+        let todo = dataSource[indexPath.row]
+        let vc = UIStoryboard(name: "TodoViewController", bundle: nil).instantiateInitialViewController { coder -> TodoViewController? in
+            return TodoViewController(coder: coder, todo: todo)
+        }
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
