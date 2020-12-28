@@ -31,6 +31,11 @@ final class TodosViewController: UIViewController {
         configureModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        model.getTodos()
+    }
+    
     @objc
     private func onTapBarButtonItem() {
         let vc = UINavigationController(rootViewController: UIStoryboard(name: "AddTodoViewController", bundle: nil).instantiateInitialViewController()!)
@@ -57,7 +62,6 @@ extension TodosViewController {
     
     private func configureModel() {
         model.delegate = self
-        model.getTodos()
     }
     
     private func configureCollectionViewLayout() -> UICollectionViewLayout {
