@@ -15,10 +15,8 @@ final class TodosViewController: UIViewController {
     
     // MARK: Properties
     
-    private var dataSource: [Todo] = [
-        Todo(title: "TEST", detail: "TEST", isCompleted: false),
-        Todo(title: "TEST", detail: "TEST", isCompleted: false)
-    ] {
+    private let model = TodosModel()
+    private var dataSource: [Todo] = [] {
         didSet {
             collectionView.reloadData()
         }
@@ -30,6 +28,12 @@ final class TodosViewController: UIViewController {
         super.viewDidLoad()
         configureNavigation()
         configureCollectionView()
+        configureModel()
+    }
+    
+    @objc
+    private func onTapBarButtonItem() {
+        // TODO: present Add Todo Screen
     }
 }
 
@@ -39,6 +43,7 @@ extension TodosViewController {
     
     private func configureNavigation() {
         navigationItem.title = "TODO一覧"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButtonItem))
     }
     
     private func configureCollectionView() {
@@ -46,6 +51,11 @@ extension TodosViewController {
         collectionView.dataSource = self
         collectionView.register(TodosCell.nib, forCellWithReuseIdentifier: TodosCell.reuseIdentifier)
         collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
+    }
+    
+    private func configureModel() {
+        model.delegate = self
+        model.getTodos()
     }
     
     private func configureCollectionViewLayout() -> UICollectionViewLayout {
@@ -60,6 +70,15 @@ extension TodosViewController {
             return section
         }
         return layout
+    }
+}
+
+// MARK: - MVC Model
+
+extension TodosViewController: TodosModelDelegate {
+    
+    func onSuccess(todos: [Todo]) {
+        dataSource = todos
     }
 }
 
@@ -85,5 +104,6 @@ extension TodosViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        // TODO: push Todo Screen
     }
 }
