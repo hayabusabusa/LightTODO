@@ -28,6 +28,8 @@
 		715E533C25996615005A127A /* AddTodoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 715E533B25996615005A127A /* AddTodoViewController.storyboard */; };
 		715E534225996C0D005A127A /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E534125996C0D005A127A /* PlaceholderTextView.swift */; };
 		715E534825996DCA005A127A /* AddTodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E534725996DCA005A127A /* AddTodoModel.swift */; };
+		715E534D2599AA73005A127A /* AddTodoModelReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E534C2599AA73005A127A /* AddTodoModelReceiver.swift */; };
+		715E53532599AAE5005A127A /* AddTodoModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E53522599AAE5005A127A /* AddTodoModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		715E533B25996615005A127A /* AddTodoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodoViewController.storyboard; sourceTree = "<group>"; };
 		715E534125996C0D005A127A /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		715E534725996DCA005A127A /* AddTodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoModel.swift; sourceTree = "<group>"; };
+		715E534C2599AA73005A127A /* AddTodoModelReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoModelReceiver.swift; sourceTree = "<group>"; };
+		715E53522599AAE5005A127A /* AddTodoModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 		71062EA125961B0D00E655EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				715E534B2599AA64005A127A /* AddTodo */,
 				71062EAD259637DA00E655EE /* Todos */,
 			);
 			path = Model;
@@ -259,6 +264,15 @@
 				715E534125996C0D005A127A /* PlaceholderTextView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		715E534B2599AA64005A127A /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				715E534C2599AA73005A127A /* AddTodoModelReceiver.swift */,
+				715E53522599AAE5005A127A /* AddTodoModelTests.swift */,
+			);
+			path = AddTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,9 +397,11 @@
 			files = (
 				71062E902595AF4600E655EE /* LightTODOTests.swift in Sources */,
 				71062EAA25962AA300E655EE /* TodosModelTests.swift in Sources */,
+				715E534D2599AA73005A127A /* AddTodoModelReceiver.swift in Sources */,
 				71062E9C2595AF7B00E655EE /* TodosTests.swift in Sources */,
 				71062EAF259637EA00E655EE /* TodosModelReceiver.swift in Sources */,
 				71062EA425961E7900E655EE /* MockUserDefaultsProvider.swift in Sources */,
+				715E53532599AAE5005A127A /* AddTodoModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
