@@ -33,7 +33,9 @@ final class TodosViewController: UIViewController {
     
     @objc
     private func onTapBarButtonItem() {
-        // TODO: present Add Todo Screen
+        let vc = UINavigationController(rootViewController: UIStoryboard(name: "AddTodoViewController", bundle: nil).instantiateInitialViewController()!)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -43,7 +45,7 @@ extension TodosViewController {
     
     private func configureNavigation() {
         navigationItem.title = "TODO一覧"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButtonItem))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButtonItem))
     }
     
     private func configureCollectionView() {
