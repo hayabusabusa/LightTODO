@@ -37,7 +37,10 @@ class TodosCell: UICollectionViewCell {
         selectedBackgroundView.backgroundColor = .systemFill
         selectedBackgroundView.layer.cornerRadius = 8
         self.selectedBackgroundView = selectedBackgroundView
+        
         layer.cornerRadius = 8
+        backgroundColor = .systemBackground
+
         button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.systemGray2.cgColor

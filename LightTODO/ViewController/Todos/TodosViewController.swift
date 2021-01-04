@@ -72,7 +72,7 @@ extension TodosViewController {
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
             group.interItemSpacing = .fixed(8)
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 8, leading: 24, bottom: 16, trailing: 24)
+            section.contentInsets = .init(top: 8, leading: 16, bottom: 16, trailing: 16)
             return section
         }
         return layout
