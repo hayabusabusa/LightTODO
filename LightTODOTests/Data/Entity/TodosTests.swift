@@ -13,6 +13,7 @@ class TodosTests: XCTestCase {
     func testDecodingTodoEntity() {
         let json = """
         {
+            "id": "TEST",
             "title": "TEST",
             "detail": "TEST",
             "isCompleted": true
@@ -32,11 +33,13 @@ class TodosTests: XCTestCase {
         {
             "items": [
                 {
+                    "id": "TEST",
                     "title": "TEST",
                     "detail": "TEST",
                     "isCompleted": true
                 },
                 {
+                    "id": "TEST",
                     "title": "TEST",
                     "detail": "TEST",
                     "isCompleted": true
@@ -52,7 +55,7 @@ class TodosTests: XCTestCase {
     }
     
     func testEncodingTodoEntity() {
-        let todo = Todo(title: "TEST", detail: "TEST", isCompleted: true)
+        let todo = Todo(id: "TEST", title: "TEST", detail: "TEST", isCompleted: true)
         let data = try? JSONEncoder().encode(todo)
         
         XCTAssertNotNil(data)
@@ -60,8 +63,8 @@ class TodosTests: XCTestCase {
     
     func testEncodingTodosEntity() {
         let todos = Todos(items: [
-            Todo(title: "TEST", detail: "TEST", isCompleted: true),
-            Todo(title: "TEST", detail: "TEST", isCompleted: false)
+            Todo(id: "TEST", title: "TEST", detail: "TEST", isCompleted: true),
+            Todo(id: "TEST", title: "TEST", detail: "TEST", isCompleted: false)
         ])
         let data = try? JSONEncoder().encode(todos)
         

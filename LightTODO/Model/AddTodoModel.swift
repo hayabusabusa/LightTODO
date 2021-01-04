@@ -23,7 +23,7 @@ final class AddTodoModel {
     }
     
     func addTodo(title: String, detail: String?) {
-        let todo = Todo(title: title, detail: detail, isCompleted: false)
+        let todo = Todo(id: UUID().uuidString, title: title, detail: detail, isCompleted: false)
         
         // NOTE: タイトルが未入力の場合
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {

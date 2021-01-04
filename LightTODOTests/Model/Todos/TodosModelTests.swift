@@ -12,7 +12,7 @@ class TodosModelTests: XCTestCase {
 
     func testGetTodos() {
         let todos = Todos(items: [
-            Todo(title: "TEST", detail: "TEST", isCompleted: false)
+            Todo(id: "TEST", title: "TEST", detail: "TEST", isCompleted: false)
         ])
         let model = TodosModel(provider: MockUserDefaultsProvider<Todos>(stored: todos))
         let receiver = TodosModelReceiver()
