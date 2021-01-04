@@ -32,6 +32,7 @@
 		715E53532599AAE5005A127A /* AddTodoModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E53522599AAE5005A127A /* AddTodoModelTests.swift */; };
 		715E53582599AF89005A127A /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E53572599AF89005A127A /* TodoViewController.swift */; };
 		715E535C2599AFA2005A127A /* TodoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 715E535B2599AFA2005A127A /* TodoViewController.storyboard */; };
+		715E53602599BC8A005A127A /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E535F2599BC8A005A127A /* TodoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		715E53522599AAE5005A127A /* AddTodoModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoModelTests.swift; sourceTree = "<group>"; };
 		715E53572599AF89005A127A /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		715E535B2599AFA2005A127A /* TodoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoViewController.storyboard; sourceTree = "<group>"; };
+		715E535F2599BC8A005A127A /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +179,9 @@
 		71062E812595AAA400E655EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				71062E822595AAB200E655EE /* TodosModel.swift */,
 				715E534725996DCA005A127A /* AddTodoModel.swift */,
+				715E535F2599BC8A005A127A /* TodoModel.swift */,
+				71062E822595AAB200E655EE /* TodosModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				71062E562595A35B00E655EE /* SceneDelegate.swift in Sources */,
 				715E534825996DCA005A127A /* AddTodoModel.swift in Sources */,
 				71062E782595A59A00E655EE /* UserDefaultsProvider.swift in Sources */,
+				715E53602599BC8A005A127A /* TodoModel.swift in Sources */,
 				71062E7E2595AA5400E655EE /* Todo.swift in Sources */,
 				71062E872595ABC700E655EE /* Todos.swift in Sources */,
 				715E534225996C0D005A127A /* PlaceholderTextView.swift in Sources */,
