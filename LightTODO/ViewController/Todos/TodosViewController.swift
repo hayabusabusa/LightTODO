@@ -38,9 +38,10 @@ final class TodosViewController: UIViewController {
     
     @objc
     private func onTapBarButtonItem() {
-        let vc = UINavigationController(rootViewController: UIStoryboard(name: "AddTodoViewController", bundle: nil).instantiateInitialViewController()!)
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        let vc = UIStoryboard(name: "AddTodoViewController", bundle: nil).instantiateInitialViewController() as! AddTodoViewController
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.presentationController?.delegate = vc
+        present(nvc, animated: true, completion: nil)
     }
 }
 

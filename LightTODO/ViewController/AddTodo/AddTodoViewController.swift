@@ -70,3 +70,12 @@ extension AddTodoViewController: AddTodoModelDelegate {
         present(alert, animated: true, completion: nil)
     }
 }
+
+// MARK: - UIAdaptivePresentationControllerDelegate
+
+extension AddTodoViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        return false
+    }
+}
