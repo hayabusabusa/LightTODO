@@ -23,6 +23,19 @@ final class TodosModel {
     
     func getTodos() {
         let todos = provider.decodable(Todos.self, for: .todos)
-        delegate?.onSuccess(todos: todos?.items ?? [])
+        let filteredTodos = todos?.items.filter { !$0.isCompleted } ?? []
+        delegate?.onSuccess(todos: filteredTodos)
+    }
+    
+    func completeTodo(of id: String) {
+        guard let storedTodos = provider.decodable(Todos.self, for: .todos),
+              let index = storedTodos.items.firstIndex(where: { $0.id == id }) else {
+            return
+        }
+        
+        var items = storedTodos.items
+        items[index].isCompleted = true
+        
+        provider.set(encodable: Todos(items: items), for: .todos)
     }
 }

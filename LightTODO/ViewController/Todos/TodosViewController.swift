@@ -100,6 +100,11 @@ extension TodosViewController: UICollectionViewDataSource {
         let todo = dataSource[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodosCell.reuseIdentifier, for: indexPath) as! TodosCell
         cell.configureCell(title: todo.title, detail: todo.detail)
+        cell.onTapButton = { [weak self] in
+            // NOTE: TODO の完了とリストのリフレッシュを実行
+            self?.model.completeTodo(of: todo.id)
+            self?.model.getTodos()
+        }
         return cell
     }
 }

@@ -23,6 +23,8 @@ class TodosCell: UICollectionViewCell {
         return UINib(nibName: "TodosCell", bundle: nil)
     }
     
+    var onTapButton: (() -> Void)?
+    
     // MARK: Overrides
     
     override func awakeFromNib() {
@@ -39,6 +41,14 @@ class TodosCell: UICollectionViewCell {
         button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.systemGray2.cgColor
+        
+        let action = UIAction(handler: { [weak self] _ in
+            guard let onTapButton = self?.onTapButton else {
+                return
+            }
+            onTapButton()
+        })
+        button.addAction(action, for: .touchUpInside)
     }
     
     func configureCell(title: String, detail: String?) {

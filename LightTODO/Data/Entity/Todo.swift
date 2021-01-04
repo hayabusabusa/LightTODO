@@ -11,5 +11,5 @@ struct Todo: Codable, Identifiable {
     let id: String
     let title: String
     let detail: String?
-    let isCompleted: Bool
+    var isCompleted: Bool
 }
