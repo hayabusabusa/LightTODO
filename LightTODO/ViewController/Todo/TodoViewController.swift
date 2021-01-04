@@ -17,6 +17,7 @@ final class TodoViewController: UIViewController {
     // MARK: Properties
     
     private let todo: Todo
+    private let model = TodoModel()
     
     // MARK: Lifecycle
     
@@ -32,12 +33,18 @@ final class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
+        configureModel()
         configureLayout()
     }
     
     @objc
     private func onTapRemoveBarButtonItem() {
-        
+        let alert = UIAlertController(title: "", message: "TODOを削除しますか？", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] _ in
+            self.model.removeTodo(of: self.todo.id)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -52,8 +59,25 @@ extension TodoViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
+    private func configureModel() {
+        model.delegate = self
+    }
+    
     private func configureLayout() {
         titleTextView.text = todo.title
         detailTextView.text = todo.detail ?? ""
+    }
+}
+
+// MARK: - MVC Model
+
+extension TodoViewController: TodoModelDelegate {
+    
+    func onSuccess() {
+        let alert = UIAlertController(title: "", message: "削除が完了しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TodoModelDelegate: AnyObject {
-    
+    func onSuccess()
 }
 
 final class TodoModel {
@@ -20,7 +20,15 @@ final class TodoModel {
         self.provider = provider
     }
     
-    func removeTodo() {
+    func removeTodo(of id: String) {
+        guard let storedTodos = provider.decodable(Todos.self, for: .todos),
+              let index = storedTodos.items.firstIndex(where: { $0.id == id }) else {
+            return
+        }
+        var items = storedTodos.items
+        items.remove(at: index)
         
+        provider.set(encodable: Todos(items: items), for: .todos)
+        delegate?.onSuccess()
     }
 }
