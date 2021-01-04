@@ -27,14 +27,14 @@ final class TodosModel {
         delegate?.onSuccess(todos: filteredTodos)
     }
     
-    func completeTodo(of id: String) {
+    func toggleTodo(of id: String) {
         guard let storedTodos = provider.decodable(Todos.self, for: .todos),
               let index = storedTodos.items.firstIndex(where: { $0.id == id }) else {
             return
         }
         
         var items = storedTodos.items
-        items[index].isCompleted = true
+        items[index].isCompleted.toggle()
         
         provider.set(encodable: Todos(items: items), for: .todos)
     }

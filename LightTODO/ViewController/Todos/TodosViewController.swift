@@ -102,7 +102,7 @@ extension TodosViewController: UICollectionViewDataSource {
         cell.configureCell(title: todo.title, detail: todo.detail, isCompleted: todo.isCompleted)
         cell.onTapButton = { [weak self] in
             // NOTE: TODO の完了とリストのリフレッシュを実行
-            self?.model.completeTodo(of: todo.id)
+            self?.model.toggleTodo(of: todo.id)
             self?.model.getTodos()
         }
         return cell
