@@ -23,7 +23,7 @@ final class TodosModel {
     
     func getTodos() {
         let todos = provider.decodable(Todos.self, for: .todos)
-        let filteredTodos = todos?.items.filter { !$0.isCompleted } ?? []
+        let filteredTodos = todos?.items ?? []//.filter { !$0.isCompleted } ?? []
         delegate?.onSuccess(todos: filteredTodos)
     }
     

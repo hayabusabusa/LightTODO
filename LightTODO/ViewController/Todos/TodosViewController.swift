@@ -70,8 +70,8 @@ extension TodosViewController {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(TodosCell.itemSize.height))
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.interItemSpacing = .fixed(8)
             let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = 8
             section.contentInsets = .init(top: 8, leading: 16, bottom: 16, trailing: 16)
             return section
         }
@@ -99,7 +99,7 @@ extension TodosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let todo = dataSource[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodosCell.reuseIdentifier, for: indexPath) as! TodosCell
-        cell.configureCell(title: todo.title, detail: todo.detail)
+        cell.configureCell(title: todo.title, detail: todo.detail, isCompleted: todo.isCompleted)
         cell.onTapButton = { [weak self] in
             // NOTE: TODO の完了とリストのリフレッシュを実行
             self?.model.completeTodo(of: todo.id)

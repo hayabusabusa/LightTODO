@@ -43,7 +43,7 @@ class TodosCell: UICollectionViewCell {
 
         button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.systemGray2.cgColor
+        button.layer.borderColor = UIColor.systemGray3.cgColor
         
         let action = UIAction(handler: { [weak self] _ in
             guard let onTapButton = self?.onTapButton else {
@@ -54,9 +54,11 @@ class TodosCell: UICollectionViewCell {
         button.addAction(action, for: .touchUpInside)
     }
     
-    func configureCell(title: String, detail: String?) {
+    func configureCell(title: String, detail: String?, isCompleted: Bool) {
         titleLabel.text = title
         detailLabel.text = detail
         detailLabel.isHidden = detail == nil
+        button.backgroundColor = isCompleted ? .systemBlue : .clear
+        button.setImage(isCompleted ? UIImage(systemName: "checkmark") : nil, for: .normal)
     }
 }
