@@ -50,7 +50,13 @@ final class TodosViewController: UIViewController {
 extension TodosViewController {
     
     private func configureNavigation() {
-        navigationItem.title = "TODO一覧"
+        let segmentedControl = UISegmentedControl(items: ["未完了", "完了済み"])
+        let segmentedControlAction = UIAction { _ in
+            print("Toggled")
+        }
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addAction(segmentedControlAction, for: .valueChanged)
+        navigationItem.titleView = segmentedControl
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButtonItem))
     }
     
