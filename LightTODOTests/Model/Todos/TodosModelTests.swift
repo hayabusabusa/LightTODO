@@ -18,7 +18,7 @@ class TodosModelTests: XCTestCase {
         let receiver = TodosModelReceiver()
         
         model.delegate = receiver
-        model.getTodos()
+        model.getTodos(of: .uncompleted)
         
         XCTAssertEqual(receiver.todos.count, 1)
     }
@@ -31,18 +31,18 @@ class TodosModelTests: XCTestCase {
         let receiver = TodosModelReceiver()
         
         model.delegate = receiver
-        model.getTodos()
+        model.getTodos(of: .uncompleted)
         
         XCTContext.runActivity(named: "存在しない ID の場合は何も変化していないことを確認") { _ in
             model.toggleTodo(of: "TEST")
-            model.getTodos()
+            model.getTodos(of: .uncompleted)
             
             XCTAssertEqual(receiver.todos.first?.isCompleted, false)
         }
         
         XCTContext.runActivity(named: "存在する ID の場合は `isCompleted` が `true` になることを確認") { _ in
             model.toggleTodo(of: "ID")
-            model.getTodos()
+            model.getTodos(of: .completed)
             
             XCTAssertEqual(receiver.todos.first?.isCompleted, true)
         }
