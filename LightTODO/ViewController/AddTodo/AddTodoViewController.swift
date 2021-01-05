@@ -26,6 +26,12 @@ final class AddTodoViewController: UIViewController {
         configureModel()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presentingViewController?.beginAppearanceTransition(true, animated: animated)
+        presentingViewController?.endAppearanceTransition()
+    }
+    
     @objc
     private func onTapCancelBarButtonItem() {
         dismiss(animated: true, completion: nil)
