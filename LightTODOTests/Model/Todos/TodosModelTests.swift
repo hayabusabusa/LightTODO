@@ -12,13 +12,40 @@ class TodosModelTests: XCTestCase {
 
     func testGetTodos() {
         let todos = Todos(items: [
-            Todo(id: "TEST", title: "TEST", detail: "TEST", isCompleted: false)
+            Todo(id: "TEST0", title: "TEST", detail: "TEST", isCompleted: false),
+            Todo(id: "TEST1", title: "TEST", detail: "TEST", isCompleted: true)
         ])
         let model = TodosModel(provider: MockUserDefaultsProvider<Todos>(stored: todos))
         let receiver = TodosModelReceiver()
         
         model.delegate = receiver
-        model.getTodos(of: .uncompleted)
+        
+        XCTContext.runActivity(named: "未完了の TODO 一覧が取得できることを確認") { _ in
+            model.getTodos(of: .uncompleted)
+            
+            XCTAssertEqual(receiver.todos.count, 1)
+        }
+        
+        XCTContext.runActivity(named: "完了済みの TODO 一覧が取得できることを確認") { _ in
+            model.getTodos(of: .completed)
+            
+            XCTAssertEqual(receiver.todos.count, 1)
+        }
+    }
+    
+    func testToggleTodoCategory() {
+        let todos = Todos(items: [
+            Todo(id: "ID", title: "TEST", detail: "TEST", isCompleted: false)
+        ])
+        let model = TodosModel(provider: MockUserDefaultsProvider<Todos>(stored: todos))
+        let receiver = TodosModelReceiver()
+        
+        model.delegate = receiver
+        model.toggleTodoCategory(to: .completed)
+        
+        XCTAssertEqual(receiver.todos.count, 0)
+        
+        model.toggleTodoCategory(to: .uncompleted)
         
         XCTAssertEqual(receiver.todos.count, 1)
     }
