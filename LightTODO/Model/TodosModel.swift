@@ -21,10 +21,17 @@ final class TodosModel {
     
     weak var delegate: TodosModelDelegate?
     
-    func getTodos() {
+    func getTodos(of type: TodoType) {
         let todos = provider.decodable(Todos.self, for: .todos)
-        let filteredTodos = todos?.items ?? []//.filter { !$0.isCompleted } ?? []
-        delegate?.onSuccess(todos: filteredTodos)
+        let items = todos?.items.filter { type == .uncompleted ? !$0.isCompleted : $0.isCompleted } ?? []
+        delegate?.onSuccess(todos: items)
+    }
+    
+    func toggleTodoCategory(to type: TodoType) {
+        let todos = provider.decodable(Todos.self, for: .todos)
+        let items = todos?.items.filter { type == .uncompleted ? !$0.isCompleted : $0.isCompleted } ?? []
+        
+        delegate?.onSuccess(todos: items)
     }
     
     func toggleTodo(of id: String) {

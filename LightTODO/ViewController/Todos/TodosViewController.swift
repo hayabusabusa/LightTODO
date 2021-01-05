@@ -16,6 +16,8 @@ final class TodosViewController: UIViewController {
     // MARK: Properties
     
     private let model = TodosModel()
+    
+    private var selectedType = TodoType.uncompleted
     private var dataSource: [Todo] = [] {
         didSet {
             collectionView.reloadData()
@@ -33,7 +35,7 @@ final class TodosViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        model.getTodos()
+        model.getTodos(of: selectedType)
     }
     
     @objc
@@ -50,9 +52,13 @@ final class TodosViewController: UIViewController {
 extension TodosViewController {
     
     private func configureNavigation() {
-        let segmentedControl = UISegmentedControl(items: ["未完了", "完了済み"])
-        let segmentedControlAction = UIAction { _ in
-            print("Toggled")
+        let segmentedControl = UISegmentedControl(items: TodoType.allCases.map { $0.title })
+        let segmentedControlAction = UIAction { [weak self] _ in
+            guard let selectedType = TodoType(rawValue: segmentedControl.selectedSegmentIndex) else {
+                return
+            }
+            self?.selectedType = selectedType
+            self?.model.toggleTodoCategory(to: selectedType)
         }
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addAction(segmentedControlAction, for: .valueChanged)
@@ -110,7 +116,7 @@ extension TodosViewController: UICollectionViewDataSource {
         cell.onTapButton = { [weak self] in
             // NOTE: TODO の完了とリストのリフレッシュを実行
             self?.model.toggleTodo(of: todo.id)
-            self?.model.getTodos()
+            self?.model.getTodos(of: self?.selectedType ?? .uncompleted)
         }
         return cell
     }
