@@ -17,12 +17,14 @@ final class AddTodoViewController: UIViewController {
     // MARK: Properties
     
     private let model = AddTodoModel()
+    private var isEdited = false
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
+        configureTextView()
         configureModel()
     }
     
@@ -30,11 +32,6 @@ final class AddTodoViewController: UIViewController {
         super.viewWillDisappear(animated)
         presentingViewController?.beginAppearanceTransition(true, animated: animated)
         presentingViewController?.endAppearanceTransition()
-    }
-    
-    @objc
-    private func onTapCancelBarButtonItem() {
-        dismiss(animated: true, completion: nil)
     }
     
     @objc
@@ -49,8 +46,11 @@ extension AddTodoViewController {
     
     private func configureNavigation() {
         navigationItem.title = "TODOを追加"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(onTapCancelBarButtonItem))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "追加", style: .done, target: self, action: #selector(onTapAddBarButtonItem))
+    }
+    
+    private func configureTextView() {
+        titleTextView.delegate = self
     }
     
     private func configureModel() {
@@ -77,11 +77,33 @@ extension AddTodoViewController: AddTodoModelDelegate {
     }
 }
 
+// MARK: - UITextViewDelegate
+
+extension AddTodoViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        isEdited = !textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+}
+
 // MARK: - UIAdaptivePresentationControllerDelegate
 
 extension AddTodoViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
-        return false
+        return !isEdited
+    }
+    
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        guard isEdited else {
+            return
+        }
+        
+        let alert = UIAlertController(title: "", message: "編集状態を破棄しますか？", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
